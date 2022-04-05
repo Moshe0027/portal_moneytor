@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import AddWord from './components/AddWord/AddWord';
+import GetWord from './components/GetWord/GetWord';
+import NavBar from './components/NavBar/NavBar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
-function App() {
+import './App.css';
+const App = () => {
+  const nameWeb = 'Language service';
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar setNameWeb={nameWeb} />
+      <Container component="main" maxWidth="xs">
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}>
+          <AddWord />
+          <GetWord />
+        </Box>
+      </Container>
     </div>
   );
-}
+};
 
 export default App;
